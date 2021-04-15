@@ -1,3 +1,9 @@
+
+const ARROW_UP = 'ArrowUp'
+const ARROW_DOWN = 'ArrowDown'
+const ARROW_RIGHT = 'ArrowRight'
+const ARROW_LEFT = 'ArrowLeft'
+
 let canvas = document.getElementById('snake');
 let context = canvas.getContext('2d');
 let box = 32;
@@ -34,10 +40,10 @@ function desenhaComida() {
 document.addEventListener('keydown', update);
 
 function update(event) {
-  if (event.keyCode == 37 && direction != 'right') direction = 'left'
-  if (event.keyCode == 38 && direction != 'down') direction = 'up'
-  if (event.keyCode == 39 && direction != 'left') direction = 'right'
-  if (event.keyCode == 40 && direction != 'up') direction = 'down'
+  if (event.key == ARROW_LEFT && direction != 'right') direction = 'left'
+  if (event.key == ARROW_UP && direction != 'down') direction = 'up'
+  if (event.key == ARROW_RIGHT && direction != 'left') direction = 'right'
+  if (event.key == ARROW_DOWN && direction != 'up') direction = 'down'
 }
 
 function iniciarJogo() {
